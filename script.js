@@ -1,3 +1,24 @@
+var audio = document.getElementById('myAudio');
+var isPlaying = false;
+
+function startAudio() {
+  if (!isPlaying) {
+    audio.play().then(() => {
+      isPlaying = true;
+  
+      document.body.removeEventListener('touchstart', startAudio, true);
+      document.body.removeEventListener('click', startAudio, true);
+    }).catch(error => {
+      // Konsol error jika play gagal (misalnya, masih diblokir)
+      console.log("Audio play blocked, waiting for user interaction.", error);
+    });
+  }
+}
+
+
+document.body.addEventListener('touchstart', startAudio, true);
+document.body.addEventListener('click', startAudio, true);
+
 var strokesLeftBottom = $('#LeftBottomGroup_1_ path[id^=Stroke]').toArray().reverse();
 var strokesLeftTop = $('#LeftTopGroup_1_ path[id^=Stroke]').toArray().reverse();
 var strokesRightBottom = $('#RightBottomGroup_1_ path[id^=Stroke]').toArray().reverse();
