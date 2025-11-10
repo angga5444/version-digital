@@ -1,0 +1,61 @@
+body {
+  background: radial-gradient(circle at center, #ADD8E6 10%, #FFFFFF 80%); 
+  overflow: hidden;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+svg#flower-frame {
+  height: 90vh;
+  width: 100%;
+}
+
+/* ======= Bunga Mawar ======= */
+[id^=PinkFlowerGroup] path {
+  fill: #d6336c !important; 
+  filter: drop-shadow(0 0 8px rgba(255, 100, 150, 0.3));
+}
+
+[id^=BaseGroup] path {
+  fill: #800f2f !important; 
+}
+
+[id^=LeafGroup] path {
+  fill: #2f5033 !important; 
+}
+
+path[id^=Stem] {
+  stroke: #2b4731 !important;
+}
+
+/* ======= Teks Nazwa ======= */
+#nazwaText {
+  opacity: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  fill: #ffebef;
+  stroke: rgba(255, 150, 180, 0.4);
+  stroke-width: 0.6;
+  letter-spacing: 1.5px;
+  filter: drop-shadow(0 0 10px rgba(255, 190, 200, 0.5));
+}
+
+/* ======= Sembunyikan elemen sebelum animasi ======= */
+#Footer_group_1_,
+[id^=PinkFlowerGroup],
+[id^=BaseGroup] path,
+[id^=LeafGroup] path,
+path[id^=Stroke],
+g[id^=BudGroup] g[id^=BudGroup] g[id^=Bud],
+#Bud8_1_,
+#Bud10_1_,
+#Bud23_1_,
+#Bud26_1_,
+[id^=Dots],
+[id^=Flourish] {
+  visibility: hidden;
+}
