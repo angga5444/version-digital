@@ -61,6 +61,13 @@ var budGroup5 = ["#Bud10_1_", "#Bud26_1_"];
 
 var dots = $("#Dots_1_");
 
+
+tl.fromTo('#nazwaText',
+  {opacity: 0, scale: 0, transformOrigin: '50% 50%'},
+  {duration: 2, opacity: 1, scale: 1, ease: "elastic.out(1, 0.5)"},
+  'flower3+=1.5'
+);
+
 var tl = gsap
   .timeline()
   .set("#Footer_group_1_", { autoAlpha: 1 })
